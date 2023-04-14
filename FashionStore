@@ -1,0 +1,34 @@
+--Create a small women fashion store
+
+CREATE TABLE my_store (id INTEGER PRIMARY KEY, item TEXT, price REAL, quantity INTEGER, category TEXT);
+
+INSERT INTO my_store VALUES 
+(1,'flared jeans', 15.00, 40, 'bottoms'),
+(2,'leather skirt', 12.00, 25, 'bottoms'),
+(3,'Off the shoulder floral shirt', 8.00, 25, 'tops'),
+(4,'snake ring', 3.00, 28, 'accessories'),
+(5,'ribbed tank top', 5.00, 30, 'tops'),
+(6,'flower necklace',5.00,15,'accessories'),
+(7,'cargo jeans',18.00,35,'bottoms'),
+(8,'white basic t-shirt',7.00, 20,'tops'),
+(9,'laced sandle',10.00,18,'shoes'),
+(10,'chunky black booties',23.00,18,'shoes'),
+(11,'spade earrings', 6.00,28,'accessories'),
+(12,'chunky black heels',14.00,18,'shoes'),
+(13,'chunky nude heels',14.00,18,'shoes'),
+(14,'nude square neck tank top',8.00,20,'tops'),
+(15,'layered gold necklace',7.00,25,'accessories');
+
+--What items have 28 or more items in inventory:
+SELECT * FROM my_store WHERE quantity >=28;
+
+--What is the price of the most expensive item:
+SELECT MAX(price) FROM my_store;
+
+--What is the max price in each category:
+SELECT category, MAX(price) as max_category 
+FROM my_store
+GROUP BY category;
+
+--How many shoes does the store sell:
+SELECT COUNT(quantity) FROM my_store WHERE category = 'shoes';
