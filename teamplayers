@@ -1,0 +1,17 @@
+CREATE TABLE players (id INTEGER PRIMARY KEY, name TEXT, position TEXT, jersey_number INTEGER, teammate TEXT);
+
+INSERT INTO players VALUES 
+(1, "Trae Young", "pg", 11, 3),
+(2, "Chris Paul", "pg", 3, 6),
+(3, "John Collins","PF", 20, 1),
+(4, "Stephen Curry", "PG", 30, 5),
+(5, "Klay Thompson", "SF", 11, 4),
+(6, "Devin Booker", "SG", 1, 2)
+;
+
+
+--Match players with their teammates with one table 2023
+SELECT players.name, team.name 
+FROM players 
+JOIN players team
+ON players.teammate=team.id;
