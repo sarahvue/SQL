@@ -1,5 +1,7 @@
 /* Create table about disney casts
 
+CREATE TABLE shows (id INTEGER PRIMARY KEY, name TEXT);
+
 INSERT INTO shows VALUES 
 (1,"Wizards of Waverly Place"),
 (2,"That's So Raven"),
